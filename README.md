@@ -1,83 +1,85 @@
+[简体中文](./README_CN.md)
+
 # Gemini Chat Exporter
 
-一键导出 Gemini 对话内容为 HTML 文件的 Firefox 浏览器扩展。  
-**导出前，需要手动上滑以加载完整对话到网页中**
+A Firefox browser extension to export Gemini conversations as HTML files with one click.  
+**Before exporting, manually scroll up to load the complete conversation into the webpage.**
 
-## 功能特点
+## Features
 
-- 一键导出当前 Gemini 对话
-- 生成美观的 HTML 文件，保留 Markdown 格式
-- 用户消息和 AI 回复使用不同背景色区分
-- 代码块使用深色背景样式
-- 响应式设计，支持多种设备查看
-- 完全本地运行，不上传任何数据
-- 无第三方依赖
+- One-click export of current Gemini conversation
+- Generate beautiful HTML files with Markdown formatting preserved
+- User messages and AI replies distinguished by different background colors
+- Code blocks styled with dark background
+- Responsive design supporting multiple devices
+- Runs completely locally without uploading any data
+- No third-party dependencies
 
-## 使用方法
+## Usage
 
-### 安装插件
+### Installing the Extension
 
-1. 从Release页面下载插件的Zip包并解压
-2. 打开about:debugging，点击“此Firefox”，临时加载附加组件
-3. 在打开的文件选择器中选择插件的`manifest.json`
-4. 若对插件进行了修改，需要点击“重载”
+1. Download and extract the extension zip file from the Release page
+2. Open about:debugging and click "This Firefox", then temporarily load an add-on
+3. Select the extension's `manifest.json` file in the file picker
+4. If you modify the extension, click "Reload" to apply changes
 
-### 导出对话
+### Exporting Conversations
 
-1. 打开 [Gemini](https://gemini.google.com/) 并进入一个对话
-2. 确保对话内容已完全加载
-3. 点击浏览器工具栏中的扩展图标
-4. 点击 **"导出对话"** 按钮
-5. 选择保存位置，完成导出
+1. Open [Gemini](https://gemini.google.com/) and enter a conversation
+2. Ensure the conversation content is fully loaded
+3. Click the extension icon in the browser toolbar
+4. Click the **"Export Conversation"** button
+5. Choose a save location to complete the export
 
-## 导出文件说明
+## Exported File Details
 
-插件直接复制Gemini对话的完整Markdown HTML，无本地渲染逻辑，保留原本对话格式。  
-导出的 HTML 文件包含：
+The extension directly copies the complete Markdown HTML from Gemini conversations without local rendering logic, preserving the original conversation format.  
+The exported HTML file includes:
 
-- 对话标题和导出时间
-- 用户提示词（蓝色背景）
-- Gemini 回复（灰色渐变背景）
-- 完整的 Markdown 渲染效果
-  - 代码块（深色背景）
-  - 表格（带边框）
-  - 列表（有序/无序）
-  - 引用块
-  - 链接
+- Conversation title and export time
+- User prompts (blue background)
+- Gemini replies (gray gradient background)
+- Complete Markdown rendering effects
+  - Code blocks (dark background)
+  - Tables (with borders)
+  - Lists (ordered/unordered)
+  - Quote blocks
+  - Links
   - ...
 
-文件命名格式：`Gemini-chat-YYYYMMDD.html`
+File naming format: `Gemini-chat-YYYYMMDD.html`
 
-## 限制
+## Limitations
 
-1. **仅导出已加载内容**：长对话需要先滚动加载全部内容
-2. **页面结构变化**：如果 Google 更新 Gemini 界面，可能需要更新选择器
-3. **图片处理**：导出的 HTML 中图片使用原始链接
+1. **Only exports loaded content**: Long conversations need to be fully scrolled and loaded first
+2. **Page structure changes**: If Google updates the Gemini interface, selectors may need updating
+3. **Image handling**: Images in exported HTML use original links
 
-## 项目结构
+## Project Structure
 
 ```
 GeminiChatExporter/
-├── manifest.json         # 扩展配置文件
+├── manifest.json         # Extension configuration file
 ├── icons/
-│   └── icon.svg          # 扩展图标
+│   └── icon.svg          # Extension icon
 ├── popup/
-│   ├── popup.html        # 弹窗界面
-│   ├── popup.css         # 弹窗样式
-│   └── popup.js          # 弹窗逻辑
+│   ├── popup.html        # Popup interface
+│   ├── popup.css         # Popup styles
+│   └── popup.js          # Popup logic
 ├── content/
-│   └── content.js        # 内容脚本（核心导出逻辑）
-└── README.md             # 说明文档
+│   └── content.js        # Content script (core export logic)
+└── README.md             # Documentation
 ```
 
-## 技术说明
+## Technical Details
 
-- **Manifest 版本**: V2
-- **权限要求**:
-  - `activeTab`: 访问当前标签页
-  - `downloads`: 触发文件下载
-- **无第三方依赖**: 原生 JavaScript 实现
+- **Manifest Version**: V2
+- **Permissions required**:
+  - `activeTab`: Access the current tab
+  - `downloads`: Trigger file downloads
+- **No third-party dependencies**: Implemented in vanilla JavaScript
 
-## 许可证
+## License
 
 MIT License
