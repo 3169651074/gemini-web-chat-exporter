@@ -6,11 +6,13 @@
 
 ## AIStudioChatExporter
 
-适用于 Google AI Studio 的对话导出插件
+适用于 Google AI Studio 的对话导出插件  
+[AIStudioChatExporter](./AIStudioChatExporter/README_CN.md)
 
 ## GeminiChatExporter
 
-适用于 Gemini App 的对话导出插件
+适用于 Gemini App 的对话导出插件  
+[GeminiChatExporter](./GeminiChatExporter/README_CN.md)
 
 ---
 

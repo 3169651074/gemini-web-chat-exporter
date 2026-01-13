@@ -6,10 +6,13 @@ A simple Gemini web chat export plugin that supports Firefox browser.
 
 ## AIStudioChatExporter
 
-A chat export plugin for Google AI Studio.
+A chat export plugin for Google AI Studio.  
+[AIStudioChatExporter](./AIStudioChatExporter/README.md)
 
 ## GeminiChatExporter
-A chat export plugin for the Gemini App.
+
+A chat export plugin for the Gemini App.  
+[GeminiChatExporter](./GeminiChatExporter/README.md)
 
 ---
 
