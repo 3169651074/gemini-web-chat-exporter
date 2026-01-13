@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "AI Studio Chat Exporter",
+  "version": "1.0.0",
+  "description": "一键导出 Google AI Studio 对话内容为 HTML 文件",
+  "author": "AIStudioChatExporter",
+
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/icon.svg",
+      "96": "icons/icon.svg"
+    },
+    "default_title": "导出 AI Studio 对话",
+    "default_popup": "popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://aistudio.google.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "aistudio-chat-exporter@firefox.extension",
+      "strict_min_version": "48.0",
+      "data_collection_permissions": {
+        "required": []
+      }
+    }
+  }
+}
